@@ -1,5 +1,10 @@
 var isDate = function (input) {
-  //   write your code here
+  if (Object.prototype.toString.call(input) === '[object Date]') {
+    return !isNaN(input.getTime());
+  }
+
+  const parsedDate = new Date(input);
+  return !isNaN(parsedDate.getTime());
 };
 
 // Do not change the code below.
